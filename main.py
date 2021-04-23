@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, render_template, request
 import requests
 import json
 
@@ -17,7 +17,7 @@ def call_github(username):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    return 'test'
+    return render_template("index.html")
 
 
 @app.route('/repos/<username>')
@@ -43,6 +43,26 @@ def stars(username):
         return Response(json.dumps(stars), status=200, mimetype='application/json')
     else:
         return Response(status=400)
+
+
+@app.route('/repos_front', methods=['GET', 'POST'])
+def repos_front():
+    if (request.method == 'POST'):
+        username = request.form['username']
+        response = repos(username)
+        return render_template("repos.html", username=username, repos=response.json)
+    else:
+        return render_template("index.html")
+
+
+@app.route('/stars_front', methods=['GET', 'POST'])
+def stars_front():
+    if (request.method == 'POST'):
+        username = request.form['username']
+        response = stars(username)
+        return render_template("stars.html", username=username, stars=response.json)
+    else:
+        return render_template("index.html")
 
 
 if __name__ == "__main__":

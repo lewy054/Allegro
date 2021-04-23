@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    </head>
+  <body>
+    <h1>{{username}} repos and stars</h1>
+    <table>
+      <th>Repository name</th>
+      <th>Stars</th>
+    {% for key, value in repos.items() %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value['watchers']}}</td>
+    </td>
+    {% endfor %}
+    </table>
+    <a href="" >Go back</a>
+  </body>
+</html>
