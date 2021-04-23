@@ -36,7 +36,7 @@ def repos(username):
     if response.status_code == 200:
         data_all = {}
         for r in response.json():
-            data = {'watchers': r['watchers_count']}
+            data = {'stars': r['stargazers_count']}
             data_all[r['name']] = data
         return Response(json.dumps(data_all), status=200, mimetype='application/json')
     return Response(status=400)
@@ -56,7 +56,7 @@ def stars(username):
     if response.status_code == 200:
         stars_sum = 0
         for r in response.json():
-            stars_sum += r['watchers_count']
+            stars_sum += r['stargazers_count']
         return Response(json.dumps(stars_sum), status=200, mimetype='application/json')
     return Response(status=400)
 
@@ -78,7 +78,7 @@ def stars_front():
         username = request.form['username']
         response = stars(username)
         if response.status_code == 200:
-            return render_template("stars.html", username=username, stars=response)
+            return render_template("stars.html", username=username, stars=response.json)
         return render_template("index.html", error="Something went wrong")
     return render_template("index.html")
 
