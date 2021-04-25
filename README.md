@@ -8,7 +8,13 @@
 * [Output example](#output-example)
 
 ## General info
+Choosen task - task 3 Software Engineer
 
+The software was created in python with flask. It can be used as REST API that returns the output in JSON format or with a frontend (it's not too pretty, but that wasn't the main goal).
+
+What can be added?
+
+A lot of things. First of all, more endpoints. GitHub API returns a lot of data that can be used, for example, to create a graph showing how the project was created - all commits connected in order how they were uploaded.
 
 ## Technologies
 Project is created with:

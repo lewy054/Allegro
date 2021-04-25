@@ -24,7 +24,7 @@ def index():
 @app.route('/repos/<username>')
 def repos(username):
     """Get info about all repos for a given user,
-        then create json with repository name and number of stars
+        then create json with repository names and number of stars
 
     Args:
         username (string): GitHub username to check
