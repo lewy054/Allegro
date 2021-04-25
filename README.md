@@ -1,4 +1,4 @@
-# GitHub api
+# GitHub API
 
 ## Table of contents
 * [General info](#general-info)
@@ -48,19 +48,19 @@ http://127.0.0.1:5000/repos/lewy054
 ```json
 {
     "Allegro": {
-        "watchers": 0
+        "stars": 0
     },
     "Daily-Journal": {
-        "watchers": 0
+        "stars": 0
     },
     "FastType": {
-        "watchers": 0
+        "stars": 0
     },
     "Sort-Visualization": {
-        "watchers": 0
+        "stars": 0
     },
     "TypeRacer": {
-        "watchers": 0
+        "stars": 0
     }
 }
 ```
